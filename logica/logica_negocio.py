@@ -5,7 +5,8 @@
 # ingresar nombres del tripulante x
 # ingresar apellidos del tripulante x
 # --------------------------------
-import json  # este impor se generó automaticamente debido a la linea 47
+import json
+from lib2to3.pytree import Base # este impor se generó automaticamente debido a la linea 47
 
 
 def leer_base_datos(Base_Datos_Tripulantes):
@@ -78,3 +79,16 @@ def guardar_info_Json(Base_Datos_Tripulantes):
             json.dump(temporal,Archivojson,ensure_ascii=False,indent=2)
             print("La información ha sido guardada exitosamente")
         return True
+#Funcion para ingresar las notas de los estudiantes 
+def leerNotas(Base_Datos_Tripulantes):
+    for Documento,Lista_info in (Base_Datos_Tripulantes.items()):
+        Numero_Notas=int(input("Ingrese el numero de notas del Tripulante con documento "))
+        Lista_Notas=[]
+        for numeroNotas in range(Numero_Notas):
+            print("Ingrese la nota ",numeroNotas+1," ", end="")
+            Nota=input()
+            Lista_Notas.append(Nota)
+        Lista_info=[Lista_info[0],Lista_info[1],Lista_Notas]
+        Base_Datos_Tripulantes[Documento]=Lista_info
+    return Base_Datos_Tripulantes
+

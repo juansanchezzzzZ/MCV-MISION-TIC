@@ -43,7 +43,8 @@ while (Continuar):
     Base_Datos_Tripulantes=Controlador.opcion_5(numero_opcion, Base_Datos_Tripulantes)
     #opción adicional (6) "guardar info tripulantes desde un Json"
     Controlador.opcion_6(numero_opcion, Base_Datos_Tripulantes)
-
+    #opción adicional (3) "ingresar notas de los tripulantes"
+    Base_Datos_Tripulantes=Controlador.opcion_3(numero_opcion, Base_Datos_Tripulantes)
 
     # cerrar menu en caso de que se elija 0
     Continuar = Menu.salir_del_sistema(numero_opcion)

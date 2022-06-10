@@ -39,5 +39,11 @@ def opcion_6(numero_opcion, Base_Datos_Tripulante):
         return True
     else:
         return False
-            
+#funcion opcion 4 (esta opción es para introdicir las notas y grabarlas)
+def opcion_3(numero_opcion, Base_Datos_Tripulante):
+    if numero_opcion == "3":
+        Base_Datos_Tripulante2=Logica.leerNotas(Base_Datos_Tripulante)
+        return Base_Datos_Tripulante2
+    else:
+        return Base_Datos_Tripulante
     
